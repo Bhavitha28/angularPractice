@@ -1,0 +1,17 @@
+<div class="container">
+    <h3>{{name}} is indicated in double parantesis</h3>
+    <h3>{{getDetails()}} getDetails() inside double params</h3>
+    <h3>{{num+200}} interpolation for numbers </h3>
+    <!-- <h1>{{num++}}</h1> (this will not work for interpolation) -->
+    <h3 [textContent]="bind"> : </h3> <!--  one way binding -->
+
+    <button name="btn1" (click)="activateButton()"> Activate Button</button>
+    <div class="space">
+        <button name="btn2" [disabled]="isButton"> submit</button>
+    </div>
+    <h3>Two-WayBinding</h3>
+    <div class="twowaybinding">
+        <input [(ngModel)]="twobind" type="text">
+        <h3> Entered data is {{twobind}}</h3>
+    </div>
+</div>

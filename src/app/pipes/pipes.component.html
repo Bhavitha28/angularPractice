@@ -1,0 +1,29 @@
+<div class="container">
+    <h2>Build in pipes</h2>
+    <h3>1.DatePipe</h3>
+    <p>{{todayNumber}} timestamp converted as {{todayNumber|date}}</p>
+    <p>{{todayString}} DateString converted as {{todayString|date}}</p>
+    <p>{{todayISOstring}} ISOString converted as {{todayISOstring|date}}</p>
+    <p>{{todayDate}} Date converted as {{todayDate|date}}</p>
+
+    <h3>a.Parameterized DatePipe</h3>
+
+    <p>{{todayDate}} <b>"Date converted as short Date format" :</b> {{todayDate|date:'short'}}</p>
+    <p>{{todayDate}} <b> "Date converted as long Date format" : </b>{{todayDate|date:'long'}}</p>
+    <p>{{todayDate}} <b>"Date converted as medium Date format" :</b> {{todayDate|date:'medium'}}</p>
+
+
+    <h3>b.Chained DatePipe</h3>
+    <p>{{todayDate}} <b>"Date converted as datepipe and upper" :</b> {{todayDate|date:"long"|uppercase}}</p>
+
+    <h3>2.lowercase Pipe</h3>
+    <p> BHAVITHA ->lowercase Pipe : {{ 'BHAVITHA' | lowercase }}</p>
+    <h3>3.uppercase Pipe</h3>
+    <p> BHAVITHA ->uppercase Pipe : {{ 'bhavitha' | uppercase }}</p>
+    <h3>4.currency Pipe</h3>
+    <p>1234.56 is converted to dollar : {{ 1234.56 | currency:'CAD' }}</p>
+    <p>Slice pipe from [1,2,3,4,5,6] : {{ [1,2,3,4,5,6] | slice:1:3 }}</p>
+    <h3>Custom Pipes</h3>
+    <p>{{details.name | custompipe : details.gender}}</p>
+
+</div>
