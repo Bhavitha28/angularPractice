@@ -1,0 +1,115 @@
+<!-- <div class="container" style="border: solid 1px black;">
+    <p>child Component</p>
+    <br>
+   
+    DATA CAPTURED:
+    <br>
+    <span *ngFor="let sibling of siblings"> 
+        {{ sibling }} <br>.
+    </span>
+</div> -->
+
+<ng-content></ng-content>
+<div #h *ngIf="update" class="content">
+    <div class="card">
+
+        <div class="card-body">
+
+            <!-- <h1>UPDATE DETAILS</h1> -->
+
+            <form [formGroup]="registerform" (ngSubmit)="updateformSubmit()">
+
+                <div class="element">
+                    <div class="field space">
+                        <span class="fa fa-user-circle"></span>
+                        <input type="text" class="form-control" id="NAME" formControlName="NAME"
+                            placeholder="FullName" [(ngModel)]="updateuser.name">
+                    </div>
+                    <div class="form-text text-warning"
+                        *ngIf="name.errors?.['required'] && (name.touched || name.dirty)">
+                        Name is Required
+                    </div>
+                    <div class="form-text text-warning"
+                        *ngIf="name.errors?.['minlength'] && (name.touched || name.dirty)">
+                        Name should be min 3 letters
+                    </div>
+                    <div class="form-text text-warning"
+                        *ngIf="name.errors?.['pattern'] && (name.touched || name.dirty)">
+                        Name should have only Alphabets
+                    </div>
+                </div>
+
+                <div class="element">
+                    <div class="field space">
+                        <span class="fa fa-user"></span>
+
+                        <input type="text" class="form-control" id="USERNAME" formControlName="USERNAME"
+                            [(ngModel)]="updateuser.userName" placeholder="Username">
+                    </div>
+                    <div class="form-text text-warning"
+                        *ngIf="Username.errors?.['required'] && ( Username.touched || Username.dirty)">
+                        Userame required
+                    </div>
+                    <div class="form-text text-warning"
+                        *ngIf="Username.errors?.['minlength'] && (Username.touched || Username.dirty)">
+                        minimum length of 5
+                    </div>
+                    <div class="form-text text-warning"
+                        *ngIf="Username.errors?.['pattern'] && (Username.touched || Username.dirty)">
+                        username should start with Alphabet
+                    </div>
+                </div>
+
+                <div>
+
+                    <div class="element">
+
+                        <div class="field space">
+                            <span class="fa fa-mobile"></span>
+                            <input type="text" class="form-control" id="mobile" formControlName="MOBILENUMBER"
+                                [(ngModel)]="updateuser.mobileNumber" placeholder="MobileNumber">
+                        </div>
+                        <div class="form-text text-warning"
+                            *ngIf="MobileNo.errors?.['required'] && ( MobileNo.touched || MobileNo.dirty)">
+                            Mobile number required
+                        </div>
+                        <div class="form-text text-warning"
+                            *ngIf="MobileNo.errors?.['pattern'] && ( MobileNo.touched || MobileNo.dirty)">
+                            Must have only digits
+                        </div>
+                        <div class="form-text text-warning"
+                            *ngIf="MobileNo.errors?.['minlength'] && ( MobileNo.touched || MobileNo.dirty)">
+                            Min numbers 10 only
+                        </div>
+                        <div class="form-text text-warning"
+                            *ngIf="MobileNo.errors?.['maxlength'] && ( MobileNo.touched || MobileNo.dirty)">
+                            Max numbers 10 only
+                        </div>
+                    </div>
+
+                    <div class="element">
+                        <div class="field space">
+                            <span class="fa fa-envelope"></span>
+                            <input type="text" class="form-control" id="EMAIL" formControlName="EMAIL"
+                                [(ngModel)]="updateuser.emailId" placeholder="EmailId">
+                        </div>
+                        <div class="form-text text-warning"
+                            *ngIf="Email.errors?.['required'] && ( Email.touched || Email.dirty)">
+                            Email required
+                        </div>
+                        <div class="form-text text-warning"
+                            *ngIf="Email.errors?.['pattern'] && ( Email.touched || Email.dirty)">
+                            Must End with (@gmail,@yahooor,@solugenix).com avoid special charcters in id.
+                        </div>
+                    </div>
+                </div>
+                <div class="sub">
+                    <button  type="button" class="btn btn-success" type="submit"
+                        [disabled]="registerform.invalid">update</button>&nbsp;&nbsp;
+                    <button type="button" class="btn btn-danger" (click)="onCancel()">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <br>
+    </div>
+</div>

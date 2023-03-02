@@ -1,0 +1,36 @@
+.container {
+    padding-left: 150px;
+    padding-top: 120px;
+    padding-right: 300px;
+
+}
+
+.field {
+    position: relative;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    background: rgba(255, 255, 255, 0.94);
+}
+
+.field span {
+    color: #222;
+    width: 40px;
+    line-height: 45px;
+    padding: 0 10px;
+}
+
+.element {
+    padding-bottom: 15px;
+}
+
+.content {
+    top: 55%;
+    left: 35%;
+    z-index: 999;
+    width: 370px;
+    text-align: center;
+    padding: 60px 32px;
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: -1px 4px 28px 0px rgba(0, 0, 0, 0.75);
+}
